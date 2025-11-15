@@ -41,5 +41,3 @@ RShiny & ShinyDashboard – Interface interactive
 GitHub Desktop – Gestion du versionning
 CapCut – Montage de la vidéo de présentation
 Gemini & ChatGPT – Support et documentation
-
-                                  
