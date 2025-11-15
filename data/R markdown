@@ -1,0 +1,149 @@
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(kableExtra)
+library(tidyr)
+library(stringr)
+
+# ------------------------------------------------------------------
+# 1. CHARGEMENT DES DONNÉES ET PARAMÈTRES
+# ------------------------------------------------------------------
+
+# Le fichier final est généré par le script d'extraction préalable
+CHEMIN_DATA_FINAL <- "data/dpe_final_lyon.csv" 
+data_source <- read_csv(CHEMIN_DATA_FINAL, show_col_types = FALSE)
+
+# Paramètres dynamiques (automatisation du rapport)
+CODE_POSTAL_CHOISI <- c("69001", "69007")  # Exemple : 1er et 7e arrondissement
+TYPE_LOGEMENT_CHOISI <- c("Ancien", "Neuf")
+
+# Filtrage des données selon les paramètres choisis
+data <- data_source %>%
+  filter(
+    code_postal %in% CODES_POSTAUX_LYON,
+    source_type %in% TYPE_LOGEMENT_CHOISI
+  )
+
+# ------------------------------------------------------------------
+# 2. PALETTE COULEURS DPE
+# ------------------------------------------------------------------
+couleurs_dpe_palette <- c(
+  "A" = "#00A75E", "B" = "#3BB040", "C" = "#94C742", 
+  "D" = "#FFD100", "E" = "#FF8C00", "F" = "#F85C00", "G" = "#DC0000"
+)
+
+# On force les niveaux pour éviter les erreurs si une classe manque
+data$dpe_classe <- factor(data$dpe_classe, levels = LETTERS[1:7])
+
+# ------------------------------------------------------------------
+# 3. TABLEAU DES INDICATEURS GLOBAUX
+# ------------------------------------------------------------------
+
+# Calcul des statistiques principales
+stats_kpi <- data %>%
+  summarise(
+    N_logements        = n(),
+    Conso_moy_globale  = mean(consommation_kwh_m2, na.rm=TRUE),
+    Surf_moyenne_m2    = mean(surface_m2, na.rm=TRUE),
+    Annee_moyenne      = mean(annee_construction, na.rm=TRUE)
+  )
+
+# Affichage du tableau propre
+kable(stats_kpi,
+      col.names=c("Nb Logements Analysés", "Conso Moyenne (kWh/m²)", "Surface Moyenne (m²)", "Année Construction Moyenne")) %>%
+  kable_styling(bootstrap_options="striped", full_width=TRUE)
+
+
+# Ce tableau donne une vision globale du parc étudié : nombre de logements,
+# consommation moyenne, taille en m² et année moyenne de construction.
+
+
+# ------------------------------------------------------------------
+# 4. GRAPHIQUE 1 — Consommation moyenne par classe DPE
+# ------------------------------------------------------------------
+
+dpe_stats <- data %>%
+  group_by(dpe_classe) %>%
+  summarise(Conso_moyenne = mean(consommation_kwh_m2, na.rm = TRUE)) %>%
+  arrange(dpe_classe)
+
+ggplot(dpe_stats, aes(x = dpe_classe, y = Conso_moyenne, fill = dpe_classe)) +
+  geom_col() +
+  scale_fill_manual(values = couleurs_dpe_palette, na.value = "grey50") +
+  labs(
+    title = "Consommation moyenne selon la classe DPE",
+    subtitle = "Plus l’étiquette est mauvaise (F–G), plus la consommation augmente.",
+    x = "Classe DPE",
+    y = "Consommation (kWh/m²)"
+  ) +
+  theme_minimal() + guides(fill = "none")
+
+
+# Le lien entre classe DPE et consommation est très clair : les logements A/B
+# consomment nettement moins que les logements classés F/G.
+
+
+# ------------------------------------------------------------------
+# 5. GRAPHIQUE 2 — Boîte à moustaches : dispersion des consommations
+# ------------------------------------------------------------------
+
+ggplot(data, aes(x = dpe_classe, y = consommation_kwh_m2)) +
+  geom_boxplot(aes(fill = dpe_classe), outlier.shape = NA) +
+  scale_fill_manual(values = couleurs_dpe_palette) +
+  coord_cartesian(ylim = quantile(data$consommation_kwh_m2, c(0.05, 0.95), na.rm = TRUE)) +
+  labs(
+    title = "Distribution des Consommations par Étiquette DPE",
+    subtitle = "Visualisation de la médiane et de la variabilité des logements.",
+    x = "Classe DPE",
+    y = "Consommation (kWh/m²)"
+  ) +
+  theme_minimal() + guides(fill = "none")
+
+# 
+# Les classes énergétiques supérieures (A, B, C) présentent des consommations
+# plus faibles et plus homogènes, tandis que les classes F et G montrent une
+# forte variabilité.
+
+
+# ------------------------------------------------------------------
+# 6. GRAPHIQUE 3 — Répartition Neuf / Ancien par classe DPE
+# ------------------------------------------------------------------
+
+data %>%
+  ggplot(aes(x = dpe_classe, fill = source_type)) +
+  geom_bar(position = "fill") +
+  scale_fill_manual(values = c("Ancien" = "#FF8C00", "Neuf" = "#007bff")) +
+  labs(
+    title = "Proportion de Logements Neufs vs Anciens par Classe DPE",
+    subtitle = "Les classes A/B sont principalement constituées de logements neufs.",
+    x = "Classe DPE",
+    y = "Proportion",
+    fill = "Ancienneté"
+  ) +
+  theme_minimal()
+
+
+# On observe que les meilleurs DPE (A/B) sont dominés par le neuf,
+# ce qui confirme que les constructions récentes sont nettement plus performantes.
+
+
+# ------------------------------------------------------------------
+# 7. GRAPHIQUE 4 — Relation surface / consommation
+# ------------------------------------------------------------------
+
+ggplot(data, aes(x = surface_m2, y = consommation_kwh_m2, color = dpe_classe)) +
+  geom_point(alpha = .4) +
+  geom_smooth(method = "lm", col = "black") +
+  scale_color_manual(values = couleurs_dpe_palette) +
+  labs(
+    title = "Relation entre Surface et Consommation Énergétique",
+    subtitle = paste("Corrélation observée :", round(cor(data$surface_m2, data$consommation_kwh_m2, use = "complete.obs"), 3)),
+    x = "Surface (m²)",
+    y = "Consommation (kWh/m²)",
+    color = "Classe DPE"
+  ) +
+  theme_minimal()
+
+
+# La surface du logement n’a pas un impact très fort sur la consommation
+# rapportée au m². La performance énergétique (classe DPE) reste le facteur dominant.
