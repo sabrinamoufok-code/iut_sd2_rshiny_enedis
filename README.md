@@ -1,1 +1,2 @@
-# iut_sd2_rshiny_enedis
+GreenTechApp – Projet RShiny
+
