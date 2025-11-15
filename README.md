@@ -26,13 +26,14 @@ RMarkdown pour l’analyse statistique et visualisation
 Rapport PDF généré depuis RMarkdown
 KPIs et visualisations sur consommation et émissions selon DPE
 
--Documentation
+- Documentation
 Fonctionnelle : guide utilisateur des fonctionnalités principales
 Technique : architecture, packages R, installation et déploiement
 
 - Démonstration vidéo
 Présentation des fonctionnalités et explications d’utilisation
 Vidéo privée YouTube (lien à ajouter ultérieurement)
+
 
 -Technologies & outils utilisés
 R & RStudio – Développement de l’application et analyses statistiques
