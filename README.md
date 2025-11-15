@@ -1,43 +1,26 @@
-GreenTechApp – Projet RShiny
+Projet RShiny
 
-Équipe : Hadjer Merabet & Sabrina Moufok
+Ce projet, mené par Hadjer Merabet et Sabrina Moufok, a pour objectif de créer une application RShiny permettant d’étudier l’impact du Diagnostic de Performance Énergétique (DPE) sur la consommation énergétique des logements en France.
 
- Objectif du projet
-Développer une application RShiny interactive pour analyser l’impact du Diagnostic de Performance Énergétique (DPE) sur les consommations électriques des logements en France, avec des outils visuels et des fonctionnalités de filtrage avancées.
+Lien de l'application : GreenTechApp
+ (à insérer après le déploiement)
 
-Lien de l’application
-GreenTechApp :
+Contenu du projet :
 
-                                                  Contenu du projet
-                                                  
-- Application RShiny
-Visualisation interactive des logements neufs et anciens
-Filtres dynamiques : type de logement, code postal
-Cartographie interactive avec markers
-Tableaux et graphiques exportables (.png et .csv)
-Choix de thèmes et personnalisation via CSS
+Application RShiny : Exploration interactive des données de logements neufs et anciens avec des filtres dynamiques, cartes interactives et possibilités d’exporter graphiques et données.
 
-- Scripts R
-Code complet de l’application avec commentaires
-Scripts pour la préparation et la gestion des données
-RMarkdown pour l’analyse statistique et visualisation
+Code de l'application : Ensemble des scripts R développés pour construire et faire fonctionner l’application.
 
-- Analyse statistique
-Rapport PDF généré depuis RMarkdown
-KPIs et visualisations sur consommation et émissions selon DPE
+Code du rapport RMarkdown : Scripts utilisés pour réaliser les analyses statistiques et créer des visualisations des données.
 
-- Documentation
-Fonctionnelle : guide utilisateur des fonctionnalités principales
-Technique : architecture, packages R, installation et déploiement
+Analyse RMarkdown en PDF : Rapport présentant les résultats des analyses et leur interprétation.
 
-- Démonstration vidéo
-Présentation des fonctionnalités et explications d’utilisation
-Vidéo privée YouTube (lien à ajouter ultérieurement)
+Code CSS : Fichier de styles permettant de personnaliser l’apparence et le thème de l’application.
 
+Code pour la création de la base de données : Scripts pour gérer, nettoyer et structurer les bases de données utilisées.
 
--Technologies & outils utilisés
-R & RStudio – Développement de l’application et analyses statistiques
-RShiny & ShinyDashboard – Interface interactive
-GitHub Desktop – Gestion du versionning
-CapCut – Montage de la vidéo de présentation
-Gemini & ChatGPT – Support et documentation
+Documentation fonctionnelle : Description des fonctionnalités principales et guide d’utilisation de l’application.
+
+Documentation technique : Explication de l’architecture de l’application, des packages utilisés et instructions pour le déploiement.
+
+Lien de la démonstration vidéo YouTube (privée) : (à compléter ultérieurement)
