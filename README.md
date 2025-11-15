@@ -34,7 +34,6 @@ Technique : architecture, packages R, installation et déploiement
 Présentation des fonctionnalités et explications d’utilisation
 Vidéo privée YouTube (lien à ajouter ultérieurement)
 
-
 -Technologies & outils utilisés
 R & RStudio – Développement de l’application et analyses statistiques
 RShiny & ShinyDashboard – Interface interactive
