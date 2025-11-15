@@ -26,10 +26,9 @@ Ce projet, mené par Hadjer Merabet et Sabrina Moufok, a pour objectif de créer
 *Lien de la démonstration vidéo YouTube (privée)* : (à compléter ultérieurement)
 
  **Outils utilisés**:
-R & RStudio – Développement de l’application et analyses statistiques
-RShiny & ShinyDashboard – Interface interactive
-GitHub – Gestion du versionning
-Draw.io – Schéma de l’architecture
-CapCut – Montage de la vidéo de présentation
-Gemini & ChatGPT – Support et documentation
- 
+R & RStudio (Développement de l’application et analyses statistiques)
+RShiny & ShinyDashboard (Interface interactive)
+GitHub ( Gestion du versionning)
+Draw.io (Schéma de l’architecture)
+CapCut (Montage de la vidéo de présentation)
+Gemini & ChatGPT (Support et documentation)
