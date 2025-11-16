@@ -1,6 +1,6 @@
 ## Projet RShiny - GreenTechApp
 
-Ce projet, mené par Hadjer Merabet et Sabrina Moufok, a pour objectif de créer une application RShiny permettant d’étudier l’impact du Diagnostic de Performance Énergétique (DPE) sur la consommation énergétique des logements en France.
+Ce projet, mené par Hadjer Merabet ,Sabrina Moufok et Nassir Benaouadi a pour objectif de créer une application RShiny permettant d’étudier l’impact du Diagnostic de Performance Énergétique (DPE) sur la consommation énergétique des logements en France.
 
 *Lien de l'application* : GreenTechApp
  (à insérer après le déploiement)
