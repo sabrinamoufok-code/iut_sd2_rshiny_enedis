@@ -7,7 +7,7 @@ Ce projet, mené par Hadjer Merabet et Sabrina Moufok, a pour objectif de créer
 
  **Contenu du projet**:
 
-*Application RShiny* : Exploration interactive des données de logements neufs et anciens avec des filtres dynamiques, cartes interactives et possibilités d’exporter graphiques et données.
+*Application RShiny* : Exploration interactive des données de logements neufs et anciens avec des filtres dynamiques, cartes interactives et possibilités d’exporter graphiques et données.https://hadjermerabet.shinyapps.io/Projet_R/
 
 *Code de l'application* : Ensemble des scripts R développés pour construire et faire fonctionner l’application.
 
