@@ -5,8 +5,9 @@ account: hadjermerabet
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 16079155
-bundleId: 11185463
+bundleId: 11186640
 url: https://hadjermerabet.shinyapps.io/Projet_R/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: adresses-69.csv|database_code.R|dpe-v2-logements-existants.csv|dpe-v2-logements-neufs.csv|R markdown|README.md
