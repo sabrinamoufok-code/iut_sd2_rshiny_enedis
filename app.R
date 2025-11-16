@@ -97,7 +97,7 @@ ui <- dashboardPage(
                   ),
                   
                   # PARAGRAPHE DE CONTEXTE GÉNÉRAL
-                  p("Le Diagnostic de Performance Énergétique (DPE) évalue la performance énergétique des logements en les classant de A (faible consommation) à G (forte consommation). Ce site propose une analyse des logements du Rhône, explorant l'impact du DPE sur différentes variables telles que les coûts énergétiques et les émissions de gaz à effet de serre."),
+                  p("Le Diagnostic de Performance Énergétique (DPE) évalue la performance énergétique des logements en les classant de A (faible consommation) à G (forte consommation). Ce site propose une analyse des logements du Rhône, explorant l'impact du DPE sur différentes variables."),
                   
                   # Description des Onglets
                   h4("Navigation et Fonctionnalités"),
@@ -111,7 +111,7 @@ ui <- dashboardPage(
                   )
                 ),
                 
-                # Colonne de droite (Objectifs et Filtres)
+                # Colonne de droite 
                 box(
                   title = "Objectifs et Filtres", solidHeader = TRUE, status = "success", width = 4, 
                   
@@ -228,7 +228,7 @@ ui <- dashboardPage(
       # ===================================================
       tabItem(tabName = "map",
               h3("Localisation des Logements Filtrés"),
-              p("La taille du cercle indique la concentration de logements filtrés dans l'arrondissement. La couleur indique la consommation moyenne."),
+              p("Focus sur la Ville de Lyon, notre champs d'action."),
               leafletOutput("map_dpe", height = 600) 
       ),
       

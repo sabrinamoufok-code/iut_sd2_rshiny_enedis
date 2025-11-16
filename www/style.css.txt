@@ -1,0 +1,188 @@
+/* Thème clair : design épuré avec des couleurs douces */
+.light-theme {
+    background-color: #EAD8B1; /* Arrière-plan beige clair */
+    color: #333333; /* Texte gris foncé */
+    font-family: Arial, sans-serif; /* Police simple et lisible */
+}
+
+.light-theme .box {
+    background-color: #f9f9f9; /* Arrière-plan blanc cassé pour les boîtes */
+    border: 1px solid #ddd; /* Bordure grise autour des boîtes */
+    color: #333; /* Texte gris foncé dans les boîtes */
+}
+
+.light-theme .box-title {
+    background-color: #f9f9f9; /* Arrière-plan similaire à la boîte */
+    color: #333; /* Texte gris foncé */
+    padding: 10px; /* Espacement autour du titre */
+    font-size: 18px; /* Taille du texte du titre */
+}
+
+.light-theme .box-body {
+    color: #555; /* Texte légèrement plus clair dans le corps des boîtes */
+    font-size: 14px; /* Taille standard du texte */
+}
+
+.light-theme table {
+    background-color: #fff; /* Tables en fond blanc */
+    color: #333; /* Texte gris foncé */
+    border-collapse: collapse; /* Supprime les espaces entre les bordures */
+}
+
+.light-theme table, th, td {
+    border: 1px solid #ddd; /* Bordures grises autour des tables et cellules */
+    padding: 8px; /* Espacement interne des cellules */
+}
+
+.light-theme h1, h2, h3, h4 {
+    color: #333333; /* Couleur uniforme pour les titres */
+}
+
+/* Thème sombre : arrière-plan foncé avec texte clair pour un contraste élevé */
+.dark-theme {
+    background-color: #333333; /* Arrière-plan sombre */
+    color: #ffffff; /* Texte blanc pour un bon contraste */
+    font-family: Arial, sans-serif; /* Police simple et moderne */
+}
+
+.dark-theme .box {
+    background-color: #444; /* Arrière-plan des boîtes plus clair que le fond */
+    border: 1px solid #555; /* Bordure légèrement plus claire */
+    color: #fff; /* Texte blanc dans les boîtes */
+}
+
+.dark-theme .box-title {
+    background-color: #28a745; /* Vert vif pour les titres des boîtes */
+    color: white; /* Texte blanc */
+    padding: 10px; /* Espacement interne */
+    font-size: 18px; /* Taille standard des titres */
+}
+
+.dark-theme .box-body {
+    color: #ddd; /* Texte légèrement atténué */
+    font-size: 14px; /* Taille du texte dans le corps */
+}
+
+.dark-theme table {
+    background-color: #555; /* Fond plus foncé pour les tables */
+    color: #fff; /* Texte blanc */
+    border-collapse: collapse; /* Suppression des espaces entre bordures */
+}
+
+.dark-theme table, th, td {
+    border: 1px solid #777; /* Bordure plus claire autour des cellules */
+    padding: 8px; /* Espacement dans les cellules */
+}
+
+.dark-theme h1, h2, h3, h4 {
+    color: #28a745; /* Vert vif pour les titres */
+}
+
+/* Thème pastel : couleurs douces avec un look plus décontracté */
+.pastel-theme {
+    background-color: #f9f9f9; /* Arrière-plan blanc cassé */
+    color: #555555; /* Texte gris doux */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Police amusante pour un style léger */
+}
+
+.pastel-theme .box {
+    background-color: #ffe0f0; /* Rose pastel pour les boîtes */
+    border: 1px solid #ff69b4; /* Bordure rose vif */
+    color: #555; /* Texte gris doux */
+}
+
+.pastel-theme .box-title {
+    background-color: #ff69b4; /* Rose vif pour les titres */
+    color: white; /* Texte blanc */
+    padding: 10px; /* Espacement interne */
+    font-size: 18px; /* Taille du texte des titres */
+}
+
+.pastel-theme .box-body {
+    color: #777; /* Texte légèrement plus foncé */
+    font-size: 14px; /* Taille standard du texte */
+}
+
+.pastel-theme table {
+    background-color: #ffe0f0; /* Arrière-plan des tables rose pastel */
+    color: #555; /* Texte gris doux */
+    border-collapse: collapse; /* Suppression des espaces entre les bordures */
+}
+
+.pastel-theme table, th, td {
+    border: 1px solid #ff69b4; /* Bordure rose vif */
+    padding: 8px; /* Espacement dans les cellules */
+}
+
+.pastel-theme h1, h2, h3, h4 {
+    color: #ff69b4; /* Rose vif pour les titres */
+}
+
+/* Thème professionnel : couleurs sobres et typographie classique */
+.professional-theme {
+    background-color: #f0f0f0; /* Arrière-plan gris clair pour un look épuré */
+    color: #444444; /* Texte gris foncé */
+    font-family: 'Times New Roman', Times, serif; /* Police classique pour un style formel */
+}
+
+.professional-theme .box {
+    background-color: #ffffff; /* Boîtes en blanc pour un contraste propre */
+    border: 1px solid #cccccc; /* Bordure discrète grise */
+    color: #444444; /* Texte gris foncé dans les boîtes */
+}
+
+.professional-theme .box-title {
+    background-color: #2c3e50; /* Bleu marine pour les titres des boîtes */
+    color: white; /* Texte blanc */
+    padding: 10px; /* Espacement interne */
+    font-size: 18px; /* Taille du texte des titres */
+}
+
+.professional-theme .box-body {
+    color: #666666; /* Texte gris moyen dans le corps */
+    font-size: 14px; /* Taille standard du texte */
+}
+
+.professional-theme table {
+    background-color: #ffffff; /* Tables en blanc */
+    color: #444444; /* Texte gris foncé */
+    border-collapse: collapse; /* Suppression des espaces entre les bordures */
+}
+
+.professional-theme table, th, td {
+    border: 1px solid #cccccc; /* Bordure grise autour des cellules */
+    padding: 8px; /* Espacement dans les cellules */
+}
+
+.professional-theme h1, h2, h3, h4 {
+    color: #2c3e50; /* Bleu marine pour les titres */
+}
+
+/* Thème coloré : couleurs vives et audacieuses pour un look dynamique */
+.colorful-theme {
+    background-color: #ffeb3b; /* Arrière-plan jaune vif */
+    color: #000000; /* Texte noir pour le contraste */
+    font-family: 'Arial Black', Gadget, sans-serif; /* Police épaisse pour un look audacieux */
+}
+
+.colorful-theme .box {
+    background-color: #ffffff; /* Boîtes blanches pour contraster avec le fond jaune */
+    border: 2px solid #e91e63; /* Bordure rose vif autour des boîtes */
+    color: #000000; /* Texte noir à l'intérieur des boîtes */
+}
+
+.colorful-theme .box-title {
+    background-color: #e91e63; /* Rose vif pour les titres des boîtes */
+    color: white; /* Texte blanc */
+    padding: 10px; /* Espacement interne */
+    font-size: 18px; /* Taille standard des titres */
+}
+
+.colorful-theme .box-body {
+    color: #000000; /* Texte noir à l'intérieur des boîtes */
+    font-size: 14px; /* Taille standard du texte */
+}
+
+.colorful-theme table {
+    background-color: #ffffff; /* Tables blanches */
+ 
