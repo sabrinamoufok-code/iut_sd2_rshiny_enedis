@@ -1,7 +1,7 @@
 # --- 0. Configuration de l'Environnement et des Cibles ---
 library(dplyr)
 library(readr)
-library(janitor) 
+library(janitor)
 
 # --- CRÉATION DU DOSSIER ET CHEMINS ---
 if (!dir.exists("data")) {
@@ -27,18 +27,18 @@ charger_et_filtrer_dpe <- function(file_name, type_logement) {
   data <- read.csv(
     file_name,
     header = TRUE,
-    sep = ",",  # SÉPARATEUR VIRGULE
+    sep = ",",
     quote = "\"",
     stringsAsFactors = FALSE,
     fileEncoding = "UTF-8",
-    check.names = FALSE, 
+    check.names = FALSE,
     comment.char = "",
     colClasses = "character"
   )
   
   # ÉTAPE 1: Nettoyage des noms de colonnes
-  data_clean_names <- data %>% 
-    janitor::clean_names() 
+  data_clean_names <- data %>%
+    janitor::clean_names()
   
   # ÉTAPE 1.5: GÉRER LES COLONNES MANQUANTES ET LES VARIATIONS DE NOMMAGE
   
@@ -61,14 +61,16 @@ charger_et_filtrer_dpe <- function(file_name, type_logement) {
     return(tibble())
   }
   
-  # 3. Standardisation et Sélection 
+  # 3. Standardisation et Sélection (MODIFIÉ POUR INCLURE GES ET TYPE D'ÉNERGIE)
   data_final <- data_filtree %>%
     select(
       # Utilisation des noms de colonnes nettoyés les plus probables
-      dpe_classe = etiquette_dpe, 
-      consommation_kwh_m2 = conso_5_usages_m2_e_finale, 
+      dpe_classe = etiquette_dpe,
+      ges_classe = etiquette_ges, # <-- DONNÉE AJOUTÉE
+      type_energie = type_installation_chauffage, # <-- DONNÉE AJOUTÉE
+      consommation_kwh_m2 = conso_5_usages_m2_e_finale,
       surface_m2 = surface_habitable_logement,
-      annee_construction = annee_construction, 
+      annee_construction = annee_construction,
       type_logement_immeuble = type_batiment,
       departement = !!sym(col_departement), # Utilise le nom de colonne corrigé
       code_postal = code_postal_brut,
@@ -80,14 +82,24 @@ charger_et_filtrer_dpe <- function(file_name, type_logement) {
     mutate(
       source_type = type_logement,
       across(c(consommation_kwh_m2, surface_m2, annee_construction, latitude, longitude), as.numeric),
-      dpe_classe = as.factor(dpe_classe)
+      dpe_classe = as.factor(dpe_classe),
+      ges_classe = as.factor(ges_classe), # <-- CONVERSION AJOUTÉE
+      type_energie = as.factor(type_energie) # <-- CONVERSION AJOUTÉE
     ) %>%
-    select(dpe_classe, consommation_kwh_m2, surface_m2, annee_construction, type_logement_immeuble, departement, code_postal, latitude, longitude, source_type) %>%
+    # Re-sélectionner pour garder le bon ordre ET inclure les nouvelles colonnes
+    select(
+      dpe_classe, ges_classe, type_energie, # <-- NOUVELLES COLONNES AJOUTÉES ICI
+      consommation_kwh_m2, surface_m2, annee_construction,
+      type_logement_immeuble, departement, code_postal,
+      latitude, longitude, source_type
+    ) %>%
     filter(
-      !is.na(latitude), 
-      !is.na(longitude), 
+      !is.na(latitude),
+      !is.na(longitude),
       !is.na(consommation_kwh_m2),
-      dpe_classe %in% LETTERS[1:7]
+      !is.na(type_energie), # <-- FILTRE AJOUTÉ
+      dpe_classe %in% LETTERS[1:7],
+      ges_classe %in% LETTERS[1:7] # <-- FILTRE AJOUTÉ
     )
   
   cat(paste("Fichier", file_name, "filtré pour Lyon. Lignes conservées :", nrow(data_final), "\n"))
