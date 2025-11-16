@@ -1,34 +1,60 @@
 ## Projet RShiny - GreenTechApp
+Ce projet, mené par Hadjer Merabet et Sabrina Moufok, a pour objectif de créer une application RShiny permettant d'étudier l'impact du Diagnostic de Performance Énergétique (DPE) sur la consommation énergétique des logements dans le département du Rhône.
 
-Ce projet, mené par Hadjer Merabet ,Sabrina Moufok a pour objectif de créer une application RShiny permettant d’étudier l’impact du Diagnostic de Performance Énergétique (DPE) sur la consommation énergétique des logements en France.
+🚀 Liens Rapides
+Application en Ligne : https://hadjermerabet.shinyapps.io/Projet_R/
 
-*Lien de l'application* : GreenTechApp
- (à insérer après le déploiement)
+Démonstration Vidéo (YouTube) : (Lien à insérer)
 
- **Contenu du projet**:
+📂 Structure du Dépôt
+Ce dépôt est organisé en plusieurs dossiers pour séparer le code de l'application, la préparation des données, les rapports et la documentation.
 
-*Application RShiny* : Exploration interactive des données de logements neufs et anciens avec des filtres dynamiques, cartes interactives et possibilités d’exporter graphiques et données.https://hadjermerabet.shinyapps.io/Projet_R/
+iut_sd2_shiny_enedis/
+│
+├── app/
+│   ├── app.R                 # Fichier principal (UI + Server) de l'application Shiny
+│   ├── data/                 # Données nettoyées utilisées par l'application
+│   │   └── dpe_final_lyon.csv
+│   └── www/                  # Ressources statiques (CSS et images)
+│       ├── style.css
+│       └── ... (images)
+│
+├── data_preparation/
+│   ├── code_base_de_données.R  # Script R de nettoyage et de préparation des données
+│   ├── adresses-69.csv
+│   ├── dpe-v2-logements-existants.csv
+│   └── dpe-v2-logements-neufs.csv
+│
+├── docs/
+│   ├── Documentation Fonctionnelle.pdf # Guide utilisateur (ce que fait l'app)
+│   └── Technique de documentation.pdf  # Architecture et guide d'installation
+│
+├── rapport/
+│   └── R Markdown.Rmd          # (ou .pdf) Analyse statistique et rapport final
+│
+└── README.md                 # Ce fichier
+📖 Contenu du Projet
+app/ (Application RShiny) : L'application Shiny (V36) fonctionnelle. Elle permet une exploration interactive des données de logements avec des filtres dynamiques, des indicateurs clés (KPI), des graphiques, une carte interactive et des possibilités d'exporter les données et les graphiques.
 
-*Code de l'application* : Ensemble des scripts R développés pour construire et faire fonctionner l’application.
+data_preparation/ (Code de la base de données) : Contient le script R (code_base_de_données.R) utilisé pour nettoyer, fusionner et préparer les données brutes (dpe-v2...csv) en une base de données propre (dpe_final_lyon.csv) utilisée par l'application.
 
-*Code du rapport RMarkdown* : Scripts utilisés pour réaliser les analyses statistiques et créer des visualisations des données.
+rapport/ (Analyse RMarkdown) : Le rapport (R Markdown) présentant les analyses statistiques, les visualisations et l'interprétation des résultats.
 
-*Analyse RMarkdown en PDF* : Rapport présentant les résultats des analyses et leur interprétation.
+docs/ (Documentation) :
 
-*Code CSS* : Fichier de styles permettant de personnaliser l’apparence et le thème de l’application.
+Documentation fonctionnelle : Description des fonctionnalités principales et guide d'utilisation de l'application.
 
-*Code pour la création de la base de données* : Scripts pour gérer, nettoyer et structurer les bases de données utilisées.
+Documentation technique : Explication de l'architecture de l'application, des packages utilisés et instructions pour le déploiement.
 
-*Documentation fonctionnelle* : Description des fonctionnalités principales et guide d’utilisation de l’application.
+🛠️ Outils Utilisés
+R & RStudio : Développement de l'application et analyses statistiques.
 
-*Documentation technique* : Explication de l’architecture de l’application, des packages utilisés et instructions pour le déploiement.
+RShiny & ShinyDashboard : Création de l'interface utilisateur interactive.
 
-*Lien de la démonstration vidéo YouTube (privée)* : (à compléter ultérieurement)
+GitHub : Gestion de versions et collaboration.
 
- **Outils utilisés**:
-R & RStudio (Développement de l’application et analyses statistiques)
-RShiny & ShinyDashboard (Interface interactive)
-GitHub ( Gestion du versionning)
-Draw.io (Schéma de l’architecture)
-CapCut (Montage de la vidéo de présentation)
-Gemini & ChatGPT (Support et documentation)
+Draw.io : Schéma de l'architecture.
+
+CapCut : Montage de la vidéo de présentation.
+
+Gemini & ChatGPT : Support au code et à la documentation.
