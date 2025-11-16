@@ -1,31 +1,24 @@
 ## Projet RShiny - GreenTechApp
 Ce projet, mené par Hadjer Merabet et Sabrina Moufok, a pour objectif de créer une application RShiny permettant d'étudier l'impact du Diagnostic de Performance Énergétique (DPE) sur la consommation énergétique des logements dans le département du Rhône.
 
-## Liens Rapides
-Application en Ligne : https://hadjermerabet.shinyapps.io/Projet_R/
+# Analyse des consommations électriques des logements en France
 
-Démonstration Vidéo (YouTube) : (Lien à insérer)
+**Lien de l'application :** [GreenTechApp](https://hadjermerabet.shinyapps.io/Projet_R/)
 
-## Structure du Dépôt
-Ce dépôt est organisé en plusieurs dossiers pour séparer le code de l'application, la préparation des données, les rapports et la documentation.
+## Contenu du projet :
 
-app/ (Application RShiny) : L'application Shiny (V36) fonctionnelle. Elle permet une exploration interactive des données de logements avec des filtres dynamiques, des indicateurs clés (KPI), des graphiques, une carte interactive et des possibilités d'exporter les données et les graphiques.
+**Application RShiny :** Visualisation des données de logements (neufs/anciens) avec filtres dynamiques, cartes interactives et options d'exportation des données et graphiques. 
 
-data_preparation/ (Code de la base de données) : Contient le script R (code_base_de_données.R) utilisé pour nettoyer, fusionner et préparer les données brutes (dpe-v2...csv) en une base de données propre (dpe_final_lyon.csv) utilisée par l'application.
+**Code de l'application :** Tous les scripts R utilisés pour le développement de l'application.  **app.r**
 
-rapport/ (Analyse RMarkdown) : Le rapport (R Markdown) présentant les analyses statistiques, les visualisations et l'interprétation des résultats.
+**Code du rapport RMarkdown :** Code ayant permis le développement de l'Analyse statistique des données. **Rmarkdown**
 
-docs/ (Documentation) :Documentation fonctionnelle : Description des fonctionnalités principales et guide d'utilisation de l'application. Documentation technique : Explication de l'architecture de l'application, des packages utilisés et instructions pour le déploiement.
+**Analyse R Markdown en PDF :** Analyse statistique des données.
 
-## Outils Utilisés
-R & RStudio : Développement de l'application et analyses statistiques.
+**Code CSS :** Fichier de styles personnalisés pour modifier l'apparence de l'application. **style.css** ( dans le dossier www )
 
-RShiny & ShinyDashboard : Création de l'interface utilisateur interactive.
+**Code pour la création de la base de données :** Scripts pour la gestion et la création des bases de données utilisées dans l'application. **database_code**
 
-GitHub : Gestion de versions et collaboration.
+**Documentation fonctionnelle :** Présentation des fonctionnalités principales de l'application, destinée aux utilisateurs. 
 
-Draw.io : Schéma de l'architecture.
-
-CapCut : Montage de la vidéo de présentation.
-
-Gemini & ChatGPT : Support au code et à la documentation.
+**Technique de documentation :** Explication détaillée de l'architecture de l'application et des packages R utilisés pour le déploiement.
