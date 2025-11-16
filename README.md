@@ -5,6 +5,8 @@ Ce projet, mené par Hadjer Merabet et Sabrina Moufok, a pour objectif de créer
 
 **Lien de l'application :** [GreenTechApp](https://hadjermerabet.shinyapps.io/Projet_R/)
 
+**Vidéo Youtube :** https://www.youtube.com/watch?v=-5VgTvHaI-Y
+
 ## Contenu du projet :
 
 **Application RShiny :** Visualisation des données de logements (neufs/anciens) avec filtres dynamiques, cartes interactives et options d'exportation des données et graphiques. 
