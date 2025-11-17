@@ -1,4 +1,4 @@
-#  Projet GreenTechApp : Analyse des DPE et Consommations
+#  Projet GreenTechApp
 
 > **Projet réalisé par :** Hadjer Merabet & Sabrina Moufok  
 > **Contexte :** IUT SD2 - Projet Enedis
