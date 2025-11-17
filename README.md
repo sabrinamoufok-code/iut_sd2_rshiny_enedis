@@ -1,26 +1,43 @@
-## Projet RShiny - GreenTechApp
-Ce projet, mené par Hadjer Merabet et Sabrina Moufok, a pour objectif de créer une application RShiny permettant d'étudier l'impact du Diagnostic de Performance Énergétique (DPE) sur la consommation énergétique des logements dans le département du Rhône.
+#  Projet GreenTechApp : Analyse des DPE et Consommations
 
-# Analyse des consommations électriques des logements en France
+> **Projet réalisé par :** Hadjer Merabet & Sabrina Moufok  
+> **Contexte :** IUT SD2 - Projet Enedis
 
-**Lien de l'application :** [GreenTechApp](https://hadjermerabet.shinyapps.io/Projet_R/)
+Ce projet a pour objectif d'analyser l'impact du **Diagnostic de Performance Énergétique (DPE)** sur la consommation électrique des logements. L'étude se concentre particulièrement sur le département du **Rhône (69)**, en comparant les logements neufs et anciens.
 
-**Vidéo Youtube :** (https://www.youtube.com/watch?v=WvpREMDcods)
+### 🔗 Accès au projet
+* **Application RShiny :** [Lancer GreenTechApp](https://hadjermerabet.shinyapps.io/Projet_R/)
+* **Démonstration Vidéo :** [Voir sur YouTube](https://www.youtube.com/watch?v=WvpREMDcods)
 
-## Contenu du projet :
+---
 
-**Application RShiny :** Visualisation des données de logements (neufs/anciens) avec filtres dynamiques, cartes interactives et options d'exportation des données et graphiques. 
+##  Architecture du projet
 
-**Code de l'application :** Tous les scripts R utilisés pour le développement de l'application.  
+Voici le détail des fichiers et scripts présents dans ce dépôt, classés par catégorie :
 
-**Code du rapport RMarkdown :** Code ayant permis le développement de l'Analyse statistique des données. 
+### 1. 💻 Application RShiny (Le Cœur du Projet)
+* **`app.R`** :
+  Script principal de l'application. Il contient à la fois l'interface utilisateur (**ui**) et la logique serveur (**server**). Il gère les cartes interactives, les filtres dynamiques et l'affichage des graphiques.
 
-**Analyse R Markdown en PDF :** Analyse statistique des données.
 
-**Code CSS :** Fichier de styles personnalisés pour modifier l'apparence de l'application.
+### 2. Base de Données et ETL
+* **`database_code.R`** :
+  Script de préparation des données (ETL). Il permet de nettoyer les fichiers bruts et de générer la structure de données consolidée utilisée par l'application.
+* **Fichiers sources (CSV) :**
+  * `dpe-v2-logements-neufs.csv` : Données brutes des logements neufs.
+  * `dpe-v2-logements-existants.csv` : Données brutes des logements anciens.
+  * `adresses-69.csv` : Base d'adresses spécifique pour la géolocalisation dans le Rhône.
 
-**Code pour la création de la base de données :** Scripts pour la gestion et la création des bases de données utilisées dans l'application. **database_code**
+### 3.  Analyse Statistique
+* **`R markdown`** :
+  Fichier source contenant le code de l'analyse exploratoire. Il permet de générer automatiquement le rapport statistique complet.
+* **`Analyse des DPE de la ville de Lyon...`** :
+  Le rapport final (PDF/HTML) issu du RMarkdown. Il présente les conclusions statistiques sur la répartition des étiquettes DPE et les consommations.
 
-**Documentation fonctionnelle :** Présentation des fonctionnalités principales de l'application, destinée aux utilisateurs. 
+### 4.  Documentation
+* **`Documentation Fonctionnelle.pdf`** :
+  *Destiné à l'utilisateur.* Explique comment utiliser l'application (filtres, navigation, exports).
+* **`Documentation Technique.pdf`** :
+  *Destiné au développeur.* Détaille l'architecture du code, les choix techniques et la liste des packages R nécessaires au déploiement.
 
-**Technique de documentation :** Explication détaillée de l'architecture de l'application et des packages R utilisés pour le déploiement.
+---
