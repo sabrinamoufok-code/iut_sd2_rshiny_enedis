@@ -5,7 +5,7 @@
 
 Ce projet a pour objectif d'analyser l'impact du **Diagnostic de Performance Énergétique (DPE)** sur la consommation électrique des logements. L'étude se concentre particulièrement sur le département du **Rhône (69)**, en comparant les logements neufs et anciens.
 
-### 🔗 Accès au projet
+###  Accès au projet
 * **Application RShiny :** [Lancer GreenTechApp](https://hadjermerabet.shinyapps.io/Projet_R/)
 * **Démonstration Vidéo :** [Voir sur YouTube](https://www.youtube.com/watch?v=WvpREMDcods)
 
@@ -15,7 +15,7 @@ Ce projet a pour objectif d'analyser l'impact du **Diagnostic de Performance Én
 
 Voici le détail des fichiers et scripts présents dans ce dépôt, classés par catégorie :
 
-### 1. 💻 Application RShiny (Le Cœur du Projet)
+### 1.  Application RShiny (Le Cœur du Projet)
 * **`app.R`** :
   Script principal de l'application. Il contient à la fois l'interface utilisateur (**ui**) et la logique serveur (**server**). Il gère les cartes interactives, les filtres dynamiques et l'affichage des graphiques.
 
